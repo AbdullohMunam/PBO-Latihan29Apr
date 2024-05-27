@@ -35,9 +35,13 @@ public class LatihanKelas {
         System.out.println(buku2.judul);
         System.out.println(buku2.author.nama);
         System.out.println(buku1.tahunpenerbitan);
-        System.out.println(buku1.harga.jual);
-        System.out.println(buku1.harga.beli);
+        buku1.harga.setJual(120000);
+        System.out.println(buku1.harga.getBeli());
         System.out.println(buku1.penerbit.nama);
+        System.out.println("Harga jual buku 1 = " + buku1.harga.getJual());
+        System.out.println("Harga jual buku 2 = " + buku2.harga.getJual());
+        buku1.terjual();
+        
     }
 }
 
@@ -47,9 +51,31 @@ class Buku {
     int tahunpenerbitan = 2024;
     Harga harga = new Harga();
     PerusahaanBuku penerbit = new PerusahaanBuku();
+    
+    public void terjual(){
+        System.out.println("Buku terjual dengan harga:" + harga);
+    }
 }
 
 class Harga {
     double jual = 100000.00;
     double beli = 60000.00;
+
+    public double getJual() {
+        return jual;
+    }
+
+    public void setJual(double jual) {
+        this.jual = jual;
+    }
+
+    public double getBeli() {
+        return beli;
+    }
+
+    public void setBeli(double beli) {
+        this.beli = beli;
+    }
+    
+    
 }
